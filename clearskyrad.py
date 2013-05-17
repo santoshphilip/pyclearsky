@@ -48,7 +48,6 @@ def tau(fhandle):
             words = line.split()
             taub = words[-12:]
             taub = [float(word) for word in taub]
-            print taub
             break
     for line in fhandle:
         line = line.strip()
@@ -56,7 +55,6 @@ def tau(fhandle):
             words = line.split()
             taud = words[-12:]
             taud = [float(word) for word in taud]
-            print taud
             break
     return taub, taud
     
@@ -102,7 +100,7 @@ def diffhoriz_inner(E0, taud, m, ad):
 def directnormal(taub, taud, alt, daynum=None, thedate=None):
     """return direct normal radiation
     see directnormal_inner for details"""
-    E0 = ETradiation(daynum=daynum)
+    E0 = ETradiation(daynum=daynum, thedate=thedate)
     m = airmass(alt)
     ab = getab(taub, taud)
     Eb = directnormal_inner(E0, taub, m, ab)
@@ -111,7 +109,7 @@ def directnormal(taub, taud, alt, daynum=None, thedate=None):
 def diffusehorizontal(taub, taud, alt, daynum=None, thedate=None):
     """return the diffuce horizontal radiation
     see diffhoriz_inner for details"""
-    E0 = ETradiation(daynum=daynum)
+    E0 = ETradiation(daynum=daynum, thedate=thedate)
     m = airmass(alt)
     ad = getad(taub, taud)
     Ed = diffhoriz_inner(E0, taud, m, ad)

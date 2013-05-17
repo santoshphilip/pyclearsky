@@ -1,6 +1,7 @@
 """py.test for clearskyrad.py"""
 import clearskyrad
 from pytest_helpers import almostequal
+from datetime import datetime
 
 def test_degcos():
     """py.test for degcos"""
@@ -139,3 +140,49 @@ def test_diffusehorizontal():
     for taub, taud, alt, daynum, Eb in data:
         result = clearskyrad.diffusehorizontal(taub, taud, alt, daynum=daynum)
         assert almostequal(result, Eb)
+
+def test_weatherdata():
+    """py.test with real weather data"""
+    # from USA_AZ_Phoenix.722780_TMY2.ddy
+    # datetime = month, date, hour = 1, 24, 13
+    # ET Horizontal Radiation = 852
+    # ET Direct Normal radiation = 1412
+    # Direct Normal Radiation = 969
+    # Diffuse horizontal radiation = 71
+    # Total Sky cover = 0
+    # Opaque sky cover = 0
+    # from USA_AZ_Phoenix.722780_TMY2.stat
+    # Jan taub = 0.306
+    # Jan taud = 2.534
+    # Feb taub = 0.317
+    # Feb taud = 2.463
+    # from <http://www.esrl.noaa.gov/gmd/grad/solcalc/azel.html>
+    # solar azimuth = 185.8 degrees
+    # solar altitude = 37.36 degrees
+
+    Eb = 969
+    taub = 0.306
+    taud = 2.534
+    alt = 37.36
+    daynum = 24
+    result = clearskyrad.directnormal(taub, taud, alt, daynum=daynum)
+    # assert result == Eb
+    
+    Ed = 71
+    result = clearskyrad.diffusehorizontal(taub, taud, alt, daynum=daynum)
+    # assert result == Ed
+
+    # other days 
+    # 1975, 2, 16, 14
+    Eb = 816 
+    taub = 0.317
+    taud = 2.463
+    alt = 40.67
+    daynum = 24
+    thedate = datetime(1975, 2, 16)
+    result = clearskyrad.directnormal(taub, taud, alt, thedate=thedate)
+    # assert result == Eb
+    
+    Ed = 152
+    result = clearskyrad.diffusehorizontal(taub, taud, alt, thedate=thedate)
+    assert result == Ed

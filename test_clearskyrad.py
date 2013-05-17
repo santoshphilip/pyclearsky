@@ -23,9 +23,9 @@ def test_ETradiation():
     """py.test for ETradiation"""
     data = ((21, 1410), # daynum, radiation
     (52, 1397), # daynum, radiation
-    (80, 1379), # daynum, radiation
-    (111, 1355), # daynum, radiation
-    (141, 1335), # daynum, radiation
+    (80, 1378), # daynum, radiation
+    (111, 1354), # daynum, radiation
+    (141, 1334), # daynum, radiation
     (172, 1323), # daynum, radiation
     (202, 1324), # daynum, radiation
     (233, 1336), # daynum, radiation
@@ -40,9 +40,9 @@ def test_ETradiation():
     from datetime import datetime as dt
     data = ((dt(2013, 1, 21), 1410), # thedate, radiation
     (dt(2013, 2, 21), 1397), # thedate, radiation
-    (dt(2013, 3, 21), 1379), # thedate, radiation
-    (dt(2013, 4, 21), 1355), # thedate, radiations
-    (dt(2013, 5, 21), 1335), # thedate, radiation
+    (dt(2013, 3, 21), 1378), # thedate, radiation
+    (dt(2013, 4, 21), 1354), # thedate, radiations
+    (dt(2013, 5, 21), 1334), # thedate, radiation
     (dt(2013, 6, 21), 1323), # thedate, radiation
     (dt(2013, 7, 21), 1324), # thedate, radiation
     (dt(2013, 8, 21), 1336), # thedate, radiation
@@ -53,7 +53,7 @@ def test_ETradiation():
     )
     for thedate, radiation in data:
         result = clearskyrad.ETradiation(thedate=thedate)
-        print result, radiation
+        # print result, radiation
         assert almostequal(result, radiation, places=0) == True
 
 def test_airmass():
@@ -90,19 +90,52 @@ def test_tau():
         result = clearskyrad.tau(fhandle)
         assert result == (taub, taud)
         
-def test_ab():
-    """py.test for ab"""
+def test_getab():
+    """py.test for getab"""
     data = ((0.289, 2.641, 0.652079204), # taub, taud, theab
     )        
     for taub, taud, theab in data:
-        result = clearskyrad.ab(taub, taud)
+        result = clearskyrad.getab(taub, taud)
         assert almostequal(result, theab)
         
-def test_ad():
-    """py.test for ad"""
+def test_getad():
+    """py.test for getad"""
     data = ((0.289, 2.641, -0.335194893), # taub, taud, thead
 )        
     for taub, taud, thead in data:
-        result = clearskyrad.ad(taub, taud)
+        result = clearskyrad.getad(taub, taud)
         assert almostequal(result, thead)
         
+def test_directnormal_inner():
+    """py.test for directnormal_inner"""
+    data = ((1409.962705, 0.289, 0.999711992, 
+    0.652079204, 1056.136599), # E0, taub,  m, ab, Eb
+    )
+    for E0, taub,  m, ab, Eb in data:
+        result = clearskyrad.directnormal_inner(E0, taub, m, ab)
+        assert almostequal(result, Eb, places=6)
+
+def test_diffhoriz_inner():
+    """py.test for diffhoriz_inner"""
+    data = ((1409.962705, 2.641, 0.999711992, 
+    -0.335194893, 100.490533,), # E0, taud, m, ad, Ed
+    )
+    for E0, taud, m, ad, Ed in data:
+        result = clearskyrad.diffhoriz_inner(E0, taud, m, ad)
+        assert almostequal(result, Ed,  places=6)
+
+def test_directnormal():
+    """py.test for directnormal"""
+    data = ((0.289, 2.641, 90, 21, 1056.136599), # taub, taud, alt, daynum, Eb
+    )
+    for taub, taud, alt, daynum, Eb in data:
+        result = clearskyrad.directnormal(taub, taud, alt, daynum)
+        assert almostequal(result, Eb, places=5)
+
+def test_diffusehorizontal():
+    """py.test for diffusehorizontal"""
+    data = ((0.289, 2.641, 90, 21, 100.490533), # taub, taud, alt, daynum, Eb
+    )
+    for taub, taud, alt, daynum, Eb in data:
+        result = clearskyrad.diffusehorizontal(taub, taud, alt, daynum=daynum)
+        assert almostequal(result, Eb)

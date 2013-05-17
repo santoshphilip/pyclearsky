@@ -24,7 +24,12 @@ def ETradiation(daynum=None, thedate=None):
     else:
         daynum = thedate.timetuple().tm_yday
     Esc = 1367.
-    E0 = Esc * (1 + 0.033 * degcos(360 * (daynum - 3) / 365))
+    # print Esc
+    # print 360. * (daynum - 3) / 365.
+    # print math.radians(360. * (daynum - 3) / 365.)
+    # print degcos(360. * (daynum - 3) / 365.)
+    E0 = Esc * (1 + 0.033 * degcos(360. * (daynum - 3) / 365.))
+    # print E0
     return E0
     
 def airmass(alt):
@@ -55,7 +60,7 @@ def tau(fhandle):
             break
     return taub, taud
     
-def ab(taub, taud):
+def getab(taub, taud):
     """return ab in equation 19
     """
     v1 = 1.219
@@ -64,8 +69,8 @@ def ab(taub, taud):
     v4 = 0.204 * taub * taud
     return v1 - v2 - v3 - v4
         
-def ad(taub, taud):
-    """return ab in equation 20
+def getad(taub, taud):
+    """return ad in equation 20
     """
     v1 = 0.202
     v2 = 0.852 * taub
@@ -74,7 +79,7 @@ def ad(taub, taud):
     return v1 - v2 - v3 - v4
         
 
-def directnormal(E0, taub, m, ab):
+def directnormal_inner(E0, taub, m, ab):
     """return the direct normal radiation
     equation 17
     Eb = E0 * exp( - taub * power(m, ab) )
@@ -83,5 +88,31 @@ def directnormal(E0, taub, m, ab):
     # E0 = ETradiation(daynum=None, thedate=None)
     # taub
     # m = airmass(alt)
-    # ab = ad(taub, taud)
-    pass
+    # ab = ab(taub, taud)
+    Eb = E0 * math.exp(-taub * math.pow(m, ab))
+    return Eb
+    
+def diffhoriz_inner(E0, taud, m, ad):
+    """return diffuse horizontal radiation
+    equation 18
+    Ed = E0 * exp(-taud * power(m, ad))"""
+    Ed = E0 * math.exp(-taud * math.pow(m, ad))
+    return Ed
+    
+def directnormal(taub, taud, alt, daynum=None, thedate=None):
+    """return direct normal radiation
+    see directnormal_inner for details"""
+    E0 = ETradiation(daynum=daynum)
+    m = airmass(alt)
+    ab = getab(taub, taud)
+    Eb = directnormal_inner(E0, taub, m, ab)
+    return Eb
+
+def diffusehorizontal(taub, taud, alt, daynum=None, thedate=None):
+    """return the diffuce horizontal radiation
+    see diffhoriz_inner for details"""
+    E0 = ETradiation(daynum=daynum)
+    m = airmass(alt)
+    ad = getad(taub, taud)
+    Ed = diffhoriz_inner(E0, taud, m, ad)
+    return Ed

@@ -74,7 +74,9 @@ def getad(taub, taud):
     v2 = 0.852 * taub
     v3 = 0.007 * taud
     v4 = 0.357 * taub * taud
-    return v1 - v2 - v3 - v4
+    # print v1, v2, v3, v4
+    # return v1 - v2 - v3 - v4 # typo in the equation. Example is correct. 
+    return v1 + v2 - v3 - v4
         
 
 def directnormal_inner(E0, taub, m, ab):
@@ -94,6 +96,7 @@ def diffhoriz_inner(E0, taud, m, ad):
     """return diffuse horizontal radiation
     equation 18
     Ed = E0 * exp(-taud * power(m, ad))"""
+    # print math.exp(-taud * math.pow(m, ad))
     Ed = E0 * math.exp(-taud * math.pow(m, ad))
     return Ed
     

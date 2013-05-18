@@ -32,9 +32,9 @@ statfilename = './weatherfiles/USA_AZ_Phoenix/USA_AZ_Phoenix.722780_TMY2.stat'
 taubs, tauds = clearskyrad.tau(open(statfilename))
 
 # for m in range(1, 13):
-for m in range(6, 7):
+for m in range(1, 13):
     # for d in range(1, calendar.monthrange(spadict['year'], m)[1]):
-    for d in range(27, 28):
+    for d in range(1, 25):
         for h in range(1, 25):
             spadict['month'] = m
             spadict['day'] = d

@@ -112,5 +112,6 @@ def diffusehorizontal(taub, taud, alt, daynum=None, thedate=None):
     E0 = ETradiation(daynum=daynum, thedate=thedate)
     m = airmass(alt)
     ad = getad(taub, taud)
+    # print E0, taud, m, ad
     Ed = diffhoriz_inner(E0, taud, m, ad)
     return Ed

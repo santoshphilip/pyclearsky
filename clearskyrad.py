@@ -1,3 +1,20 @@
+# Copyright (c) 2013 Santosh Philip
+
+# This file is part of pyclearsky.
+
+# pyclearsky is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# pyclearsky is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with pyclearsky.  If not, see <http://www.gnu.org/licenses/>.
+
 """calcs for clearsky radiation from Ashrae fundamentals 2009. page 14.9"""
 
 import math
@@ -70,6 +87,7 @@ def getab(taub, taud):
 def getad(taub, taud):
     """return ad in equation 20
     """
+    # print taub, taud
     v1 = 0.202
     v2 = 0.852 * taub
     v3 = 0.007 * taud

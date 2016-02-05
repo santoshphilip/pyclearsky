@@ -2,3 +2,7 @@
 ----------
 
 Trying to figure out how to have two remotes
+second is on bitbucket. Done by:
+git remote add bitbucket https://santoshphilip@bitbucket.org/santoshphilip/pyclearsky.git
+also
+git remote -v

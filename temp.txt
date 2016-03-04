@@ -1,1 +1,2 @@
     {N 33° 25'} {W 112°  1'} {GMT -7.0 Hours}
+new line

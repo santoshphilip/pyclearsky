@@ -1,1 +1,2 @@
 afile
+line 1 in afile

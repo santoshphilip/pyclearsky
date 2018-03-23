@@ -11,6 +11,10 @@ https://cookiecutter-pypackage.readthedocs.io/en/latest/
 to make full use of cookiecutter
 
 
+uploaded to pypi
+- see online documentation for how to do this.
+- pypi is a fast chenging env. -> will have to scramble to do this again.
+
 Next steps
 - click package
 - test for click

@@ -6,3 +6,6 @@ cookiecutter uses .editorconfig # http://editorconfig.org
 textmate plugin is: https://github.com/Mr0grog/editorconfig-textmate
 
 
+read up on:
+https://cookiecutter-pypackage.readthedocs.io/en/latest/
+to make full use of cookiecutter

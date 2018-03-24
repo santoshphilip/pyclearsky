@@ -18,3 +18,8 @@ uploaded to pypi
 Next steps
 - click package
 - test for click
+- documentation
+- __doc__ documentation
+- Readme
+- check on contributions.md
+- tests

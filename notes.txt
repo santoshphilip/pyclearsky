@@ -9,16 +9,23 @@ textmate plugin is: https://github.com/Mr0grog/editorconfig-textmate
 read up on:
 https://cookiecutter-pypackage.readthedocs.io/en/latest/
 to make full use of cookiecutter
-
+- bumpversion -> bumps up the version of the release software
+- autorelease to pypi when there is a new tag on master
+- pyup will keep the dependencies updated -> mya want to use the local version
+- will run Travis-Cl
+- will add the repo to read the docs account
 
 uploaded to pypi - DONE
 - see online documentation for how to do this.
-- pypi is a fast chenging env. -> will have to scramble to do this again.
+- pypi is a fast changing env. -> will have to scramble to do this again.
 
 Next steps
 - click package
 - test for click
 - documentation
+    - "make html" generates the html documentation
+    - html is in docs/_build/html/index.html
+    - docs/_build in in gitignore
 - __doc__ documentation
 - Readme
 - check on contributions.md

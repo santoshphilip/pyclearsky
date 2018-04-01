@@ -1,3 +1,10 @@
+2018-04-01
+----------
+quickest effect:
+- add documentation
+- do a full release to pypi
+- to read the docs
+
 
 2018-03-23
 ----------

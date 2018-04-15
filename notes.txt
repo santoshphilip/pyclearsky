@@ -1,3 +1,15 @@
+2018-04-15
+----------
+Study and act on functionality in coockiecutter
+- documentation
+    - need stephen's help in 
+- clean up tests 
+    - pytest
+        - fuck ... tests are failing. I'll have to review all, carefully
+    - try to generate documentation.
+    - what is pytest-runner
+    - see test coverage
+
 2018-04-01
 ----------
 quickest effect:

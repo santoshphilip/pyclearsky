@@ -90,7 +90,6 @@ def getad(taub, taud):
     return v1 + v2 - v3 - v4
 
 
-
 def directnormal_inner(E0, taub, m, ab):
     """return the direct normal radiation
     equation 17

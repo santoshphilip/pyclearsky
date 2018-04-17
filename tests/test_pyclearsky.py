@@ -5,9 +5,9 @@
 
 import pytest
 
-from click.testing import CliRunner
-
-from pyclearsky import clearskyrad
+# from click.testing import CliRunner
+#
+# from pyclearsky import clearskyrad
 # from pyclearsky import cli
 
 

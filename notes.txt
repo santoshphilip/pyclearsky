@@ -1,3 +1,9 @@
+2018-04-16
+----------
+
+Got the API documentation figured out. From 
+https://samnicholls.net/2016/06/15/how-to-sphinx-readthedocs/
+
 2018-04-15
 ----------
 Study and act on functionality in coockiecutter

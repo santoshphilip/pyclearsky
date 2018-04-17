@@ -9,12 +9,12 @@
 import math
 
 
-
 def degcos(theta):
     """return cos(theta) when theta is in degrees"""
     theta = math.radians(theta)
     return math.cos(theta)
-    
+
+
 def degsin(theta):
     """docstring for degsin"""
     theta = math.radians(theta)
@@ -37,7 +37,8 @@ def ETradiation(daynum=None, thedate=None):
     E0 = Esc * (1 + 0.033 * degcos(360. * (daynum - 3) / 365.))
     # print E0
     return E0
-    
+
+
 def airmass(alt):
     """return the airmass
     Equation 16
@@ -45,7 +46,8 @@ def airmass(alt):
     b = alt
     m = 1 / (degsin(b) + 0.50572 * math.pow(6.07995 + b, -1.6364))
     return m
-    
+
+
 def tau(fhandle):
     """return tau_b, tau_d for each month of year"""
     for line in fhandle:
@@ -63,7 +65,8 @@ def tau(fhandle):
             taud = [float(word) for word in taud]
             break
     return taub, taud
-    
+
+
 def getab(taub, taud):
     """return ab in equation 19
     """
@@ -72,7 +75,8 @@ def getab(taub, taud):
     v3 = 0.151 * taud
     v4 = 0.204 * taub * taud
     return v1 - v2 - v3 - v4
-        
+
+
 def getad(taub, taud):
     """return ad in equation 20
     """
@@ -82,15 +86,16 @@ def getad(taub, taud):
     v3 = 0.007 * taud
     v4 = 0.357 * taub * taud
     # print v1, v2, v3, v4
-    # return v1 - v2 - v3 - v4 # typo in the equation. Example is correct. 
+    # return v1 - v2 - v3 - v4 # typo in the equation. Example is correct.
     return v1 + v2 - v3 - v4
-        
+
+
 
 def directnormal_inner(E0, taub, m, ab):
     """return the direct normal radiation
     equation 17
     Eb = E0 * exp( - taub * power(m, ab) )
-    """ 
+    """
     # Eb args = E0, taub, m, ab
     # E0 = ETradiation(daynum=None, thedate=None)
     # taub
@@ -98,7 +103,8 @@ def directnormal_inner(E0, taub, m, ab):
     # ab = ab(taub, taud)
     Eb = E0 * math.exp(-taub * math.pow(m, ab))
     return Eb
-    
+
+
 def diffhoriz_inner(E0, taud, m, ad):
     """return diffuse horizontal radiation
     equation 18
@@ -106,7 +112,8 @@ def diffhoriz_inner(E0, taud, m, ad):
     # print math.exp(-taud * math.pow(m, ad))
     Ed = E0 * math.exp(-taud * math.pow(m, ad))
     return Ed
-    
+
+
 def directnormal(taub, taud, alt, daynum=None, thedate=None):
     """return direct normal radiation
     see directnormal_inner for details"""
@@ -115,6 +122,7 @@ def directnormal(taub, taud, alt, daynum=None, thedate=None):
     ab = getab(taub, taud)
     Eb = directnormal_inner(E0, taub, m, ab)
     return Eb
+
 
 def diffusehorizontal(taub, taud, alt, daynum=None, thedate=None):
     """return the diffuce horizontal radiation

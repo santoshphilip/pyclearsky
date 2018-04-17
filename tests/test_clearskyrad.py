@@ -16,6 +16,7 @@ def test_func():
     result = clearskyrad.func(1, 2)
     assert result
 
+
 def test_degcos():
     """py.test for degcos"""
     data = ((60, 0.5),  # deg, thecos

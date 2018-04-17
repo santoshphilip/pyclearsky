@@ -70,27 +70,68 @@ def degsin(theta):
 
 
 def ETradiation(daynum=None, thedate=None):
-    """extraterrestrial radiation for specific day
-    Equation 4.
-    E0 = Esc (1 + 0.033 * cos(360 * (n - 3) / 365))"""
+    """Calculates Extraterrestial Radiation for a specific day
+
+    This is equation (4) from
+    ASHRAE Fundamentals 2009, page 14.7.
+
+    The equation is:
+
+    - E0 = Esc (1 + 0.033 * cos(360 * (n - 3) / 365))
+        - where n = daynum
+
+    ETradiation takes *daynum* OR *thedate* as an input
+        - daynum is the day of the year
+            - (1 for January 1, 32 for February 1, etc)
+        - thedate is a datetime.datetime object
+            - ETradiation will calculate the daynum from the date
+
+
+    Parameters
+    ----------
+    daynum : int
+        daynum is the day of the year
+    thedate : datetime.datetime()
+        daynum is calulated ffrom the datetime object
+
+    Returns
+    -------
+    float
+        Extraterrestial Radiation for a specific day
+
+"""
     if daynum:
         pass
     else:
         daynum = thedate.timetuple().tm_yday
     Esc = 1367.
-    # print Esc
-    # print 360. * (daynum - 3) / 365.
-    # print math.radians(360. * (daynum - 3) / 365.)
-    # print degcos(360. * (daynum - 3) / 365.)
     E0 = Esc * (1 + 0.033 * degcos(360. * (daynum - 3) / 365.))
-    # print E0
     return E0
 
 
 def airmass(alt):
-    """return the airmass
-    Equation 16
-    m = 1 / [sin(b) + 0.50572 * power(6.07995 + b, -1.6364)]"""
+    """Calculates the airmass
+
+    This is equation (16) from
+    ASHRAE Fundamentals 2009, page 14.9.
+
+    The equation is:
+
+    -  m = 1 / [sin(b) + 0.50572 * power(6.07995 + b, -1.6364)]
+        - where b = solar altitude
+
+
+    Parameters
+    ----------
+    alt : float
+        solar altitude
+
+    Returns
+    -------
+    float
+        Air Mass
+
+"""
     b = alt
     m = 1 / (degsin(b) + 0.50572 * math.pow(6.07995 + b, -1.6364))
     return m

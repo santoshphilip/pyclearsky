@@ -1,4 +1,4 @@
-# Copyright (c) 2013 Santosh Philip
+# Copyright (c) 2013, 2018 Santosh Philip
 # =======================================================================
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -9,14 +9,62 @@
 import math
 
 
+def func(arg1, arg2):
+    """Summary line of func.
+
+    Extended description of function. This is a Sample
+    Function to show how the function documentation should be done.
+    This is the numpy style documentation,
+    will be formatted beautifully by sphinx-napoleon extension
+
+    Parameters
+    ----------
+    arg1 : int
+        Description of arg1
+    arg2 : str
+        Description of arg2
+
+    Returns
+    -------
+    bool
+        Description of return value
+
+    """
+    return True
+
+
 def degcos(theta):
-    """return cos(theta) when theta is in degrees"""
+    """return cos(theta) where theta is in degrees
+
+    Parameters
+    ----------
+    theta : float
+        angle in degrees
+
+    Returns
+    -------
+    float
+        cosine value of the angle theta (theta is in degrees)
+
+    """
     theta = math.radians(theta)
     return math.cos(theta)
 
 
 def degsin(theta):
-    """docstring for degsin"""
+    """return sin(theta) where theta is in degrees
+
+    Parameters
+    ----------
+    theta : float
+        angle in degrees
+
+    Returns
+    -------
+    float
+        sine value of the angle theta (theta is in degrees)
+
+    """
     theta = math.radians(theta)
     return math.sin(theta)
 

@@ -11,6 +11,11 @@ from pyclearsky.pytest_helpers import almostequal
 from datetime import datetime
 
 
+def test_func():
+    """py.test for func"""
+    result = clearskyrad.func(1, 2)
+    assert result
+
 def test_degcos():
     """py.test for degcos"""
     data = ((60, 0.5),  # deg, thecos

@@ -1,15 +1,27 @@
+2018-04-18
+----------
+
+using bumpversion
+- bumpversion --current-version 0.1.0 minor # becomes 0.2.0
+- bumpversion --current-version 0.2.0 patch # becomes 0.2.1
+files changed are:
+- pyclearsky/__init__.py
+- setup.py
+- setup.cfg
+
+
 2018-04-16
 ----------
 
-Got the API documentation figured out. From 
+Got the API documentation figured out. From
 https://samnicholls.net/2016/06/15/how-to-sphinx-readthedocs/
 
 2018-04-15
 ----------
 Study and act on functionality in coockiecutter
 - documentation
-    - need stephen's help in 
-- clean up tests 
+    - need stephen's help in
+- clean up tests
     - pytest
         - fuck ... tests are failing. I'll have to review all, carefully
     - try to generate documentation.

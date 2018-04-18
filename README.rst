@@ -19,7 +19,7 @@ pyclearsky
 implements the equations from Ashrae Fundamentals 2009 for clear sky in Python
 
 
-* Free software: MIT license
+* Free software: Mozilla Public License Version 2.0
 * Documentation: https://pyclearsky.readthedocs.io.
 
 
@@ -27,6 +27,7 @@ Features
 --------
 
 * TODO
+    * implement in python3
 
 Credits
 -------

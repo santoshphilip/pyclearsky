@@ -108,8 +108,8 @@ def test_tau():
     ),  # txt, taub, taud
         )
     for txt, taub, taud in data:
-        import StringIO
-        fhandle = StringIO.StringIO(txt)
+        from six import StringIO
+        fhandle = StringIO(txt)
         result = clearskyrad.tau(fhandle)
         assert result == (taub, taud)
 

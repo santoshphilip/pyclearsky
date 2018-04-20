@@ -8,6 +8,7 @@ files changed are:
 - pyclearsky/__init__.py
 - setup.py
 - setup.cfg
+it will also commit changes with a bump version message
 
 
 2018-04-16

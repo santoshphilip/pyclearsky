@@ -138,7 +138,22 @@ def airmass(alt):
 
 
 def tau(fhandle):
-    """return tau_b, tau_d for each month of year"""
+    """return tau_b and tau_d for each month of the year
+
+    These values are in the weather file with extension .stat
+
+    Parameters
+    ----------
+    fhandle : filehandle
+        fhandle is a file open for reading
+
+    Returns
+    -------
+    taub : list
+    taud : list
+        return two lists with values of taub and taud
+
+"""
     for line in fhandle:
         line = line.strip()
         if line.startswith("taub"):
@@ -157,7 +172,22 @@ def tau(fhandle):
 
 
 def getab(taub, taud):
-    """return ab in equation 19
+    """calculates value of ab in equation (19)
+
+    Equation (19) in ASHRAE Fundamentals 2009 pg 14.9
+
+    Parameters
+    ----------
+    taub : float
+        value of taub in equation (19)
+    taud : float
+        value of taud in equation (19)
+
+    Returns
+    -------
+    float
+        the value of ab
+
     """
     v1 = 1.219
     v2 = 0.043 * taub
@@ -167,9 +197,25 @@ def getab(taub, taud):
 
 
 def getad(taub, taud):
-    """return ad in equation 20
+    """calculates value of ad in equation (20)
+
+    Equation (20) in ASHRAE Fundamentals 2009 pg 14.9
+
+    Parameters
+    ----------
+    taub : float
+        value of taub in equation (20)
+    taud : float
+        value of taud in equation (20)
+
+    Returns
+    -------
+    float
+        the value of ad
+
     """
-    # print taub, taud
+    # """return ad in equation 20
+    # """
     v1 = 0.202
     v2 = 0.852 * taub
     v3 = 0.007 * taud
@@ -180,23 +226,66 @@ def getad(taub, taud):
 
 
 def directnormal_inner(E0, taub, m, ab):
-    """return the direct normal radiation
-    equation 17
-    Eb = E0 * exp( - taub * power(m, ab) )
+    """Calculates value of Eb in equation (17)
+
+    Equation (17) in ASHRAE Fundamentals 2009 page 14.9
+
+    The equation is
+        - Eb = E0 * exp( - taub * power(m, ab) )
+
+    Parameters
+    ----------
+    E0 : float
+        Extraterrestrial normal irradiance [Equation (4)]
+    taub : float
+        beam optical depth
+    m : float
+        Air Mass Equation (16)
+    ab : float
+        beam air mass exponents
+
+    Returns
+    -------
+    float
+        Beam normal irradiance
+
     """
-    # Eb args = E0, taub, m, ab
-    # E0 = ETradiation(daynum=None, thedate=None)
-    # taub
-    # m = airmass(alt)
-    # ab = ab(taub, taud)
+    # """return the direct normal radiation
+    # equation 17
+    # Eb = E0 * exp( - taub * power(m, ab) )
+    # """
     Eb = E0 * math.exp(-taub * math.pow(m, ab))
     return Eb
 
 
 def diffhoriz_inner(E0, taud, m, ad):
-    """return diffuse horizontal radiation
-    equation 18
-    Ed = E0 * exp(-taud * power(m, ad))"""
+    """Calculates value of Ed in equation (18)
+
+    Equation (18) in ASHRAE Fundamentals 2009 page 14.9
+
+    The equation is
+        - Ed = E0 * exp(-taud * power(m, ad))
+
+    Parameters
+    ----------
+    E0 : float
+        Extraterrestrial normal irradiance [Equation (4)]
+    taud : float
+        diffuse optical depth
+    m : float
+        Air Mass Equation (16)
+    ad : float
+        diffuse air mass exponents
+
+    Returns
+    -------
+    float
+        Diffuse horizontal irradiance
+
+    """
+    # """return diffuse horizontal radiation
+    # equation 18
+    # Ed = E0 * exp(-taud * power(m, ad))"""
     # print math.exp(-taud * math.pow(m, ad))
     Ed = E0 * math.exp(-taud * math.pow(m, ad))
     return Ed

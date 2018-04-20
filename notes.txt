@@ -2,6 +2,8 @@
 2018-04-20
 ----------
 - Do travis  DONE
+- Readthedocs is building everytime I push - Need to change this
+- updating pypi is not working right now.
 
 2018-04-18
 ----------

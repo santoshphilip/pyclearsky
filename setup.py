@@ -32,8 +32,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    description="""Implements the equations from Ashrae Fundamentals 2009
-for clear sky in Python""",
+    description="""Implements the equations from Ashrae Fundamentals 2009 for clear sky in Python""",
     entry_points={
         'console_scripts': [
             'pyclearsky=pyclearsky.cli:main',

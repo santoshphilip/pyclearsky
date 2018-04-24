@@ -28,6 +28,7 @@ Done!
 - Do travis  DONE
 - Readthedocs is building everytime I push - Need to change this
 - updating pypi is not working right now.
+    - the long description was broken simply because the short description was too long
 
 2018-04-18
 ----------

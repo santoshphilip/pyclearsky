@@ -23,7 +23,7 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MPL-2.0',
+        'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.7',
@@ -32,14 +32,14 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    description="""Implements the equations from Ashrae Fundamentals 2009 for clear sky in Python""",
+    description="""Implements the equations from Ashrae Fundamentals 2009""",
     entry_points={
         'console_scripts': [
             'pyclearsky=pyclearsky.cli:main',
         ],
     },
     install_requires=requirements,
-    license="MPL-2.0",
+    license="Mozilla Public License 2.0 (MPL 2.0)",
     long_description='\n\n' + readme, # + '\n\n' + history,
     long_description_content_type='text/x-rst',
     include_package_data=True,

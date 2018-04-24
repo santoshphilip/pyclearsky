@@ -2,8 +2,10 @@
 ----------
 How to run twine
 
+= git commit
 - make clean
--
+- bumpversion patch # or minor or major
+
 Create some distributions in the normal way:
 
     python setup.py sdist bdist_wheel

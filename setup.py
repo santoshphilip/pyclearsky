@@ -19,7 +19,7 @@ test_requirements = ['pytest', ]
 
 setup(
     author="Santosh Philip",
-    author_email='santosh_philip@yahoo.com',
+    author_email='santosh_philip @at@ yahoo .dot. com',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -41,7 +41,7 @@ for clear sky in Python""",
     },
     install_requires=requirements,
     license="MIT license",
-    long_description=readme, # + '\n\n' + history,
+    long_description='\n\n' + readme, # + '\n\n' + history,
     include_package_data=True,
     keywords='pyclearsky',
     name='pyclearsky',

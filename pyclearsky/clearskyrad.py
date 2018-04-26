@@ -92,7 +92,7 @@ def ETradiation(daynum=None, thedate=None):
     daynum : int
         daynum is the day of the year
     thedate : datetime.datetime()
-        daynum is calulated ffrom the datetime object
+        daynum is calculated from the datetime object
 
     Returns
     -------
@@ -292,8 +292,33 @@ def diffhoriz_inner(E0, taud, m, ad):
 
 
 def directnormal(taub, taud, alt, daynum=None, thedate=None):
-    """return direct normal radiation
-    see directnormal_inner for details"""
+    """calculate direct normal irradiance from a clear sky
+
+    - calculations for a specific day and specific sun altitude
+    - taub and taud can be got from the .stat file
+    - the .stat comes with the weather files (.epw, .ddy, .stat)
+    - use either daynum or thedate
+    - Calls directnormal_inner() that calculates equation (17)
+
+    Parameters
+    ----------
+    taub : float
+        Clear Sky Optical Depth for Beam Irradiance
+    taud : float
+        Clear Sky Optical Depth for Diffuse Irradiance
+    alt : float
+        Altitude of the sun
+    daynum : int
+        daynum is the day of the year
+    thedate : datetime.datetime()
+        daynum is calculated from the datetime object
+
+    Returns
+    -------
+    float
+        Direct Normal irradiance from a clear sky
+
+    """
     E0 = ETradiation(daynum=daynum, thedate=thedate)
     m = airmass(alt)
     ab = getab(taub, taud)
@@ -302,8 +327,33 @@ def directnormal(taub, taud, alt, daynum=None, thedate=None):
 
 
 def diffusehorizontal(taub, taud, alt, daynum=None, thedate=None):
-    """return the diffuce horizontal radiation
-    see diffhoriz_inner for details"""
+    """calculate diffuse horizontal irradiance from a clear sky
+
+    - calculations for a specific day and specific sun altitude
+    - taub and taud can be got from the .stat file
+    - the .stat comes with the weather files (.epw, .ddy, .stat)
+    - use either daynum or thedate
+    - Calls diffhoriz_inner() that calculates equation (18)
+
+    Parameters
+    ----------
+    taub : float
+        Clear Sky Optical Depth for Beam Irradiance
+    taud : float
+        Clear Sky Optical Depth for Diffuse Irradiance
+    alt : float
+        Altitude of the sun
+    daynum : int
+        daynum is the day of the year
+    thedate : datetime.datetime()
+        daynum is calculated from the datetime object
+
+    Returns
+    -------
+    float
+        Direct Normal irradiance from a clear sky
+
+    """
     E0 = ETradiation(daynum=daynum, thedate=thedate)
     m = airmass(alt)
     ad = getad(taub, taud)

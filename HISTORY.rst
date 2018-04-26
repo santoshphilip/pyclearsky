@@ -1,14 +1,17 @@
 History
 =======
 
-2018-04-20
-----------
+1.0.0 (2018-04-25)
+------------------
 
-- tag v0.2.4
-- Getting cookiecutter to work
-- another line
+* Add documentation for release 1.0
 
 0.1.0 (2018-03-23)
 ------------------
 
 * First release on PyPI.
+
+Initial Coding (2013)
+---------------------
+
+* All coding was complete in 2013, but not yet packaged for release.

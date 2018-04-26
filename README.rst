@@ -25,8 +25,14 @@ implements the equations from Ashrae Fundamentals 2009 for clear sky in Python
 Features
 --------
 
-* TODO
-    * implement in python3
+Implements the following equation of ASHRAE Fundamentals 2009, chapter 14
+
+- Equation (4) from page 14.7
+- Equation (16) from page 14.9
+- Equation (17) from page 14.9
+- Equation (18) from page 14.9
+- Equation (19) from page 14.9
+- Equation (20) from page 14.9
 
 Credits
 -------

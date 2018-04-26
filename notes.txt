@@ -1,7 +1,17 @@
 2018-04-25
 ----------
 Cleanup for final release
-- remove click
+- remove click - DONE.
+- update documentation for release
+    - equations
+        - 4
+        - 16
+        - 17
+        - 18
+        - 19
+        - 20
+- update History before release
+        
 2018-04-24
 ----------
 How to run twine

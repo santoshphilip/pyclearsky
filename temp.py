@@ -22,6 +22,7 @@ alts = {1:35.97,
 10:45.59,
 11:36.46,
 12:32.8}
+# from https://www.esrl.noaa.gov/gmd/grad/solcalc/azel.html
 
 
 directnormal(taub, taud, alt, daynum=None, thedate=None)[source]

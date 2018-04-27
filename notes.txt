@@ -1,3 +1,14 @@
+2018-04-27
+----------
+- see ./temp.py
+- calculated values do not match those in the stat file
+- discussed with Stephen. Not clear why.
+- release and ask why
+    - have a spreadsheet showing the hand-calcs.
+
+- update: bug in temp.py
+- good match calculated values and those in the stat file
+
 2018-04-25
 ----------
 Cleanup for final release
@@ -11,7 +22,7 @@ Cleanup for final release
         - 19
         - 20
 - update History before release
-        
+
 2018-04-24
 ----------
 How to run twine

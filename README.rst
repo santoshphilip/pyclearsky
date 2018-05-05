@@ -69,9 +69,10 @@ Let us use the Phoenix AZ weather file as a way of exploring pyclearsky. And let
 
 This is the clear sky radiation on the 21st of every month. Let us try to use pyclearsky to calculate the same results::
 
+    from io import open # to work with python2 and python3
     from pyclearsky import clearskyrad
     fname = "./original_code/weatherfiles/USA_AZ_Phoenix/USA_AZ_Phoenix.722780_TMY2.stat"
-    fhandle = open(fname, 'r')
+    fhandle = open(fname, 'r', encoding='latin1')
     tau = clearskyrad.tau(fhandle)
     taub, taud = tau
 

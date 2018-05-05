@@ -1,10 +1,10 @@
 History
 =======
 
-1.0.0 (2018-04-25)
+0.3.0 (2018-05-04)
 ------------------
 
-* Add documentation for release 1.0
+* Fairly complete Release
 
 0.1.0 (2018-03-23)
 ------------------

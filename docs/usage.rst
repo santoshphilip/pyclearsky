@@ -4,4 +4,5 @@ Usage
 
 To use pyclearsky in a project::
 
-    import pyclearsky
+    from pyclearsky import clearskyrad
+

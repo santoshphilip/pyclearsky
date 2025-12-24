@@ -1,6 +1,13 @@
 2018-05-04
 ----------
 
+
+2025-12-23
+----------
+
+running on uv
+
+
 python3
 - installed the latest python3 from python.org
 

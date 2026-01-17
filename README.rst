@@ -67,14 +67,13 @@ Let us use the Phoenix AZ weather file as a way of exploring pyclearsky. And let
 
 This is the clear sky radiation on the 21st of every month. Let us try to use pyclearsky to calculate the same results::
 
-    from io import open # to work with python2 and python3
     from pyclearsky import clearskyrad
     fname = "./original_code/weatherfiles/USA_AZ_Phoenix/USA_AZ_Phoenix.722780_TMY2.stat"
     fhandle = open(fname, 'r', encoding='latin1')
     tau = clearskyrad.tau(fhandle)
     taub, taud = tau
 
-    print taub
+    print(taub)
     [0.306,
      0.317,
      0.339,
@@ -88,7 +87,7 @@ This is the clear sky radiation on the 21st of every month. Let us try to use py
      0.318,
      0.298]
 
-    print taud
+    print(taud)
     [0.306,
      0.317,
      0.339,
@@ -136,8 +135,8 @@ Now we are ready to calculate the clear sky radiation. Starting with direct norm
     from datetime import datetime
 
     for month in range(1, 13):
-        print clearskyrad.directnormal(taub[month-1], taud[month-1],
-            alts[month], thedate=datetime(2018, month, 21))
+        print(clearskyrad.directnormal(taub[month-1], taud[month-1],
+            alts[month], thedate=datetime(2018, month, 21)))
 
 the direct normal results are ::
 
@@ -158,8 +157,8 @@ the direct normal results are ::
 And for diffuse horizontal ::
 
     for month in range(1, 13):
-        print clearskyrad.diffusehorizontal(taub[month-1], taud[month-1],
-            alts[month], thedate=datetime(2018, month, 21))
+        print(clearskyrad.diffusehorizontal(taub[month-1], taud[month-1],
+            alts[month], thedate=datetime(2018, month, 21)))
 
 The diffuse horizontal results are ::
 

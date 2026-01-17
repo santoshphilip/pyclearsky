@@ -1,5 +1,38 @@
-2018-05-04
+====================
+Notes for pyclearsky
+====================
+
+2026-01-17
 ----------
+
+Moving to uv
+============
+
+::
+    uv init
+    uv add -r requirements.txt
+    uv add --dev -r requirements_dev.txt
+    uv sync
+
+Running on uv
+=============
+
+::
+    uv run python your_script.py
+    uv run pytest                      # If you have tests
+    uv run ruff check .                # If you added ruff as a dev tool
+
+
+Updating on uv
+==============
+
+::
+    uv lock --upgrade     # Update all packages to latest compatible versions
+    uv sync               # Apply the updates to the environment
+
+    uv add --dev ruff mypy pytest
+    uv add requests
+
 
 
 2025-12-23

@@ -3,7 +3,7 @@ name = "pyclearsky"
 version = "0.3.1"
 description = "implements the equations from Ashrae Fundamentals 2009 for clear sky in Python"
 readme = "README.rst"
-requires-python = ">=3.13"
+requires-python = ">=3.9,<4.0"
 dependencies = [
     "six==1.16.0",
 ]

@@ -5,7 +5,7 @@ description = "implements the equations from Ashrae Fundamentals 2009 for clear 
 readme = "README.rst"
 requires-python = ">=3.9,<4.0"
 dependencies = [
-    "six==1.16.0",
+#     "six==1.16.0",
 ]
 
 [dependency-groups]

@@ -9,7 +9,6 @@ authors = [
 ]
 license = { text = "MIT" }
 keywords = ["pyclearsky", "ashrae", "clear-sky", "solar"]
-]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",

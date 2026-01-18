@@ -1,11 +1,27 @@
+[project]
 name = "pyclearsky"
 version = "0.3.2"
 description = "implements the equations from Ashrae Fundamentals 2009 for clear sky in Python"
 readme = "README.rst"
 requires-python = ">=3.9,<4.0"
-dependencies = [
-#     "six==1.16.0",
+authors = [
+  { name = "Santosh Philip", email = "santosh_philip@nomail.com" }
 ]
+license = { text = "MIT" }
+keywords = ["pyclearsky", "ashrae", "clear-sky", "solar"]
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+  "Natural Language :: English",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/santoshphilip/pyclearsky"
+Repository = "https://github.com/santoshphilip/pyclearsky"
+Issues = "https://github.com/santoshphilip/pyclearsky/issues"
 
 [dependency-groups]
 dev = [

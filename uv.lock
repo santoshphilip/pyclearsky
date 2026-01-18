@@ -958,11 +958,11 @@ wheels = [
 
 [[package]]
 name = "pip"
-version = "23.1.2"
+version = "25.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/fa/ee/74ff76da0ab649eec7581233daeb43d8aa35383d8f75317b2ab3b80c922f/pip-23.1.2.tar.gz", hash = "sha256:0e7c86f486935893c708287b30bd050a36ac827ec7fe5e43fe7cb198dd835fba", size = 2087568, upload-time = "2023-04-26T09:23:29.701Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/fe/6e/74a3f0179a4a73a53d66ce57fdb4de0080a8baa1de0063de206d6167acc2/pip-25.3.tar.gz", hash = "sha256:8d0538dbbd7babbd207f261ed969c65de439f6bc9e5dbd3b3b9a77f25d95f343", size = 1803014, upload-time = "2025-10-25T00:55:41.394Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/08/e3/57d4c24a050aa0bcca46b2920bff40847db79535dc78141eb83581a52eb8/pip-23.1.2-py3-none-any.whl", hash = "sha256:3ef6ac33239e4027d9a5598a381b9d30880a1477e50039db2eac6e8a8f6d1b18", size = 2064688, upload-time = "2023-04-26T09:23:27.085Z" },
+    { url = "https://files.pythonhosted.org/packages/44/3c/d717024885424591d5376220b5e836c2d5293ce2011523c9de23ff7bf068/pip-25.3-py3-none-any.whl", hash = "sha256:9655943313a94722b7774661c21049070f6bbb0a1516bf02f7c8d5d9201514cd", size = 1778622, upload-time = "2025-10-25T00:55:39.247Z" },
 ]
 
 [[package]]
@@ -1089,7 +1089,7 @@ dev = [
     { name = "coverage", specifier = "==7.2.7" },
     { name = "flake8", specifier = "==6.0.0" },
     { name = "ipython", specifier = ">=8.18.1" },
-    { name = "pip", specifier = "==23.1.2" },
+    { name = "pip", specifier = "==25.3" },
     { name = "pip-tools", specifier = "==6.13.0" },
     { name = "pytest", specifier = "==7.4.0" },
     { name = "pytest-runner", specifier = "==6.0.0" },

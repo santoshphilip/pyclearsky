@@ -1,6 +1,6 @@
 [project]
 name = "pyclearsky"
-version = "0.3.1"
+version = "0.3.2"
 description = "implements the equations from Ashrae Fundamentals 2009 for clear sky in Python"
 readme = "README.rst"
 requires-python = ">=3.9,<4.0"

@@ -6,10 +6,23 @@ Running Notes for pyclearsky
 2026-01-18
 ==========
 
-bumping a version and installing
+Changed __init__.py # version
 
-- open an issue to include all the setup.py stuff in eppy that is not in the pyproject.toml file
+bumping a version and pushing branch and pushing tags
 
+::
+
+    uv version --bump patch/minor/major
+
+    git commit -m "Bump version to $(uv version --short)"
+    git tag "v$(uv version --short)"
+    git push origin <branch>
+    git push origin tag "v$(uv version --short)"
+
+Now publish::
+
+    uv build
+    uv publish --token # token comes here
 
 ------
 

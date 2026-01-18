@@ -6,6 +6,7 @@
 # =======================================================================
 
 """py.test for clearskyrad.py"""
+from io import StringIO   
 from pyclearsky import clearskyrad
 from pyclearsky.pytest_helpers import almostequal
 from datetime import datetime
@@ -108,7 +109,6 @@ def test_tau():
     ),  # txt, taub, taud
         )
     for txt, taub, taud in data:
-        from six import StringIO
         fhandle = StringIO(txt)
         result = clearskyrad.tau(fhandle)
         assert result == (taub, taud)

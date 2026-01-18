@@ -1,4 +1,11 @@
-[project]
+- name: Install uv
+  uses: astral-sh/setup-uv@v3
+
+  - name: Install deps + sync venv
+    run: uv sync --frozen --all-extras --dev
+
+    - name: Test
+      run: uv run --frozen pytest[project]
 name = "pyclearsky"
 version = "0.3.2"
 description = "implements the equations from Ashrae Fundamentals 2009 for clear sky in Python"
@@ -26,3 +33,6 @@ dev = [
     "watchdog==3.0.0",
     "wheel==0.40.0",
 ]
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

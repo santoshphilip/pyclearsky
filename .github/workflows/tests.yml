@@ -1,0 +1,8 @@
+- name: Install uv
+  uses: astral-sh/setup-uv@v3
+
+- name: Install deps + sync venv
+  run: uv sync --frozen --all-extras --dev
+
+- name: Test
+  run: uv run --frozen pytest

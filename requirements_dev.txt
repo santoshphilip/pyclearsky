@@ -1,4 +1,4 @@
-pip==23.1.2
+pip==25.3
 bumpversion==0.6.0
 wheel==0.40.0
 watchdog==3.0.0
@@ -7,7 +7,7 @@ tox==4.6.3
 coverage==7.2.7
 Sphinx==6.2.1
 sphinx-rtd-theme==1.2.2
-readthedocs-sphinx-search==0.3.1
+readthedocs-sphinx-search==0.3.2
 twine==4.0.2
 
 pytest==7.4.0

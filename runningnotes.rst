@@ -25,6 +25,24 @@ Now publish::
 
 ------
 
+Lists of files changing when uv is used::
+
+files changed::
+
+    .github/workflows/tests.yml # for github actions
+    pyclearsky/__init__.py # version is got from pyproject.toml
+    docs/requirements.txt # needed for readthedocs
+    pyproject.toml # uv likes having everything here
+
+Once uv is set upthese files can be removed::
+
+    requirements.txt
+    requirements_dev.txt
+    setup.cfg
+    setup.py
+
+------
+
 running on uv
 
 bump an update and publish to pypi

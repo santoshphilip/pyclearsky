@@ -2,7 +2,7 @@ pyclearsky
 ==========
 
 
-.. image:: https://img.shields.io/pypi/v/pyclearsky.svg
+.. image:: https://img.shields.io/pypi/v/pyclearsky.svg?cacheSeconds=300
         :target: https://pypi.python.org/pypi/pyclearsky
 
 .. image:: https://readthedocs.org/projects/pyclearsky/badge/?version=latest
